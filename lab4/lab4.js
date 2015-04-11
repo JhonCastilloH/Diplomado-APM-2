@@ -11,7 +11,7 @@ console.log('Cuando es 1 == 1 es: ' + (1 == 1));
 
 console.log('Cuando es "1" == 1 es: ' + ("1" == 1));
 
-consle.log('Cuando es 0 == false es: ' + (0 == false));
+console.log('Cuando es 0 == false es: ' + (0 == false));
 
 console.log('cuando es 1 == true es: ' + (1 == true));
 
@@ -32,7 +32,7 @@ console.log("La Comparación entre los objetos X y Y es: " + (x == y));
 console.log('Cuando es "1" === 1 es: ' + ("1" === 1));
 
 console.log('Cuando es "0" === 0 es: ' + ("0" === 0));
-
+	
 
 /* Comparación no estricta de no igual (!=) */
 
@@ -51,10 +51,10 @@ console.log("----- flujos logicos -----");
 console.log( true && true);
 console.log(true && false);
 console.log(false && false);
-console.log(false && false);
+console.log(false && true);
 
 // Operador del tipo or `or`
 console.log( true || true);
 console.log(true || false);
 console.log(false || false);
-console.log(false || false);
+console.log(false || true);
