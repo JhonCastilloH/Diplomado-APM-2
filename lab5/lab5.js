@@ -1,7 +1,24 @@
 /* Uso de funciones, variables y estructuras de control */
 
 var d, minutes, time, hours, message;
+var a,b,c,m;
+function myFunction(a, b) {
+   if(a > b){
+	return a	;
+	} else {
+	return b;
+	}            // The function returns the product of p1 and p2
+}
 
+function myFunction2(c) {
+	m=c[0];
+	for (var i = 1; i < c.length ; i++) {
+		m=myFunction(m,c[i]);
+	}
+	return m;
+}
+
+console.log(myFunction2([10,4,5,7,9]));
 // Utilizando el objeto Date de JS para trabajar con fechas, tiempo y timestamps
 d = new Date();
 
@@ -37,3 +54,4 @@ if(time >= 0 && time < 1200){
 } else if(time >=1700 && time < 2359){
 	alert("Buenas noches");
 }
+
