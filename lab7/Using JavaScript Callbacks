@@ -1,0 +1,157 @@
+Using JavaScript Callbacks
+
+Callback functions are very common in JavaScript, because JavaScript in the browser is single-threaded. Working with callbacks is an important part of your skillset as an app developer. This beginner's tutorial introduces callbacks and looks at their use within the MoSync Application Framework.
+What is a Callback?
+
+When a call is made to an entity that is external to your JavaScript code, like for example a server, your code cannot usually afford to wait for a reply because that reply may be several seconds in coming. Furthermore, there are likely to be other calls that need to be made without delay and you just cannot hang around waiting for something that may or may not happen.
+
+Suppose you call a function that explicitly returns a value, and that return just never happens? You code will simply hang, waiting for forever for a return value that never arrives.
+
+The solution to this problem is to use callbacks — that is to pass along with the call to the server a JavaScript function that the server should invoke whenever the result is ready.
+
+We make extensive use of callbacks throughout the MoSync Wormhole JavaScript API; a call through Wormhole to the underlying C++ code behaves in the same way as a call to a server: letting you (or requiring you) to specify a callback function when you make the call. 
+
+
+A Simple Callback
+
+One of the most common implementations of a callback that you are likely to encounter is found in the standard JavaScript addEventListener function which you can be attach to many different targets. This function has the general syntax:
+
+
+target.addEventListener(event-type, callback);
+
+
+Here event-type is a string representing the type of event to listen for, callback is the callback function that will receive a notification when an event of the specified type occurs, and target is the JavaScript object that you want to receive the event from.
+
+Here is a typical implementation when the target is a NativeUI widget (in this case a pre-defined button):
+
+
+var myButton = document.getNativeElementById("myButton");
+myButton.addEventListener("Clicked", function()
+{
+   alert("The button was clicked");
+});
+ 
+
+Standalone Callback Functions
+
+The callback function in the code above was defined in-line. It simply opened an alert box when a notification arrived from the listener. (The example above also serves to illustrate that, In JavaScript, code can be passed as an argument to a function, just like a variable or an object.) 
+
+In-line functions can be hard to read when they contain more than a couple of lines of code, so sometimes a better approach is to name the callout function and define it separately. This also allows you to use the callback function in another context:
+
+
+// Define the callback function.
+function buttonCallback()
+{
+   alert("A button was clicked");
+}
+ 
+// Define two event listeners.
+myButton1.addEventListener("Clicked", buttonCallback);
+myButton2.addEventListener("Clicked", buttonCallback);
+ 
+
+A Typical Wormhole Callback Function
+
+In the code above we didn’t do anything useful with the notification coming from the event listener, we just popped-up an alert when the notification arrived. Let’s look at a callback function that actually does something useful with the data in the notification object.
+
+In the following example, the callback function (updateAccelerometer) handles data coming from the accelerometer sensor:
+
+
+// Initialization of the Accelerometer sensor.
+var accelerometer = new SensorConnection("Accelerometer");
+ 
+// Add an event listener to the sensor and identify a callback function.
+accelerometer.addEventListener("onsensordata", updateAccelerometer);
+ 
+// start monitoring the acceleometer every 1 second 
+accelerometer.startWatch({interval:1000});
+   
+// Define the callback function.
+function updateAccelerometer(sensorData)
+{
+   console.log("X:" + sensorData.data.x);
+   console.log("Y:" + sensorData.data.y);
+   console.log("Z:" + sensorData.data.z);
+}
+
+
+The updateAccelerometer function gets a call back whenever an onsensordata event is heard by the event listener. The function processes the three acceleration vectors and sends them to the console log window.
+
+Obviously, if the onsensordata event never occurs, the updateAccelerometer function will never get called — but that is something which you will need to think about and handle elsewhere in your code.
+
+ 
+
+Defining Functions with Callback Arguments
+
+So far we have been looking at the "client" side where the call originates and the callback function is defined. Now let’s look at the other side, where the original call gets processed, and from where the callback is invoked.
+
+Here is a simple maths function that generates a random number between two values, min and max, and passes the result to a callback function:
+
+
+function randomGenerator(min, max, callback)
+{
+   var myNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+   setTimeout(function() { callback(myNumber); }, 500);
+}
+
+
+This maths function accepts three arguments, the third of which is the callback function to which the results should be sent. The function first does the required calculation (using the values of the first two arguments), then we make it wait 500 milliseconds (using setTimeout) before invoking the callback function passing the result. 
+
+(We are using setTimeout here merely to simulate what might happen with a complex asynchronous computation of a random number -- imagine how slow your app could become if this function is called multiple times and you had to wait each time for the result via a standard return from the called function.) 
+
+On the client side, we can now make use of our random number generation function like this:
+
+
+randomGenerator (5, 15, function(num)
+{
+   console.log("Your number is " + num);
+});
+
+
+Five hundred or so milliseconds later our random number will be passed to our callback function and written to the console.
+
+ 
+
+Parallel Operations via Callbacks
+
+Common JavaScript frameworks like jQuery make extensive use of callbacks. Here is an example of a call to the jQuery fadeIn() method. This method, which is used to fade in graphical interface elements until they become opaque, accepts two arguments: the duration of the animation and an optional callback function. We could use it on an element, for example, like this:
+
+
+$("#element").fadeIn(2000, function()
+{
+   alert("Fade in complete");
+});
+
+
+Our fade-in of the animated element will take 2 seconds, and the alert will not be shown until the whole fade-in process has completed. That's probably not something we want our code to wait around for. But because we are using a callback we don't have to wait for the fade-in to complete, we can go away and do other things - like start the fade-in of other interface elements.
+
+ 
+
+Closures
+
+A callback function can be used as a closure. A closure is a function that remembers references to variables outside of it's local scope. By this we mean variables that are neither parameters of the function, nor local variables defined inside the function with var keyword, but variables defined outside of the function, for example global variables or local variables defined in the containing function. Here is an example:
+
+
+// Global variable.
+var name = "Chris";
+ 
+function lottery()
+{
+   // Local variables.
+   var win = ", you win!";
+   var lose = "Better luck next time ";
+ 
+   // The function in the third parameter is a closure
+   // that refers to the variables name, win, lose.
+   randomGenerator (0, 100, function(num)
+   {
+      if (num > 50)
+      {
+         alert(name + win);
+      }
+      else
+      {
+         alert(name + lose);
+      }
+   });
+}
