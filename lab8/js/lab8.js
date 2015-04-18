@@ -34,6 +34,7 @@ function Validate(){}
 
 $('.button').bind('click', function(event){
 
+
   var validate = new Validate();
 
   var data = $('#nid').val();
@@ -180,6 +181,9 @@ $('.button').bind('click', function(event){
 
 	$(document).on('click', '#info', function(){
 
+	$('#info').remove();
+	$('#openModal > div > h2').empty();
+	$('#openModal > div > ul').empty();
     $('#openModal > div').append(
       '<h2>Este es tu pedido</h2>' +
       '<ul>' +
