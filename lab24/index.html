@@ -13,25 +13,5 @@
     <div ng-include src=" 'includes/menu.html' "></div>
 
     <div ng-view></div>
-
-    <script>
-        angular.module('initial_spi', ['ngRoute'])
-               .config(['$routeProvider', function($routeProvider){
-
-            /*
-             * `when()` cuantas veces sea necesario
-             * `otherwise()` una sola vez "OJO"
-            */
-            $routeProvider.when('/hello', {
-                templateUrl : "hello.html"
-            }).when('/mobile', {
-                templateUrl : "mobiles.html"
-            }).otherwise({
-                redirectTo: '/',
-                templateUrl: 'otherwise.html'
-            });
-
-               }])
-    </script>
 </body>
 </html>
