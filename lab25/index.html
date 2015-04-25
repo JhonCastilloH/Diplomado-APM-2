@@ -17,24 +17,5 @@
 
     <div ng-view></div>
 
-    <script>
-        angular.module('initial_spi', ['ngRoute'])
-               .config(['$routeProvider', function($routeProvider){
-
-            /*
-             * `when()` cuantas veces sea necesario
-             * `otherwise()` una sola vez "OJO"
-            */
-            $routeProvider.when('/android', {
-                templateUrl : "views/android.html"
-            }).when('/iphone', {
-                templateUrl : "views/iphone.html"
-            }).otherwise({
-                redirectTo: '/',
-                templateUrl: 'otherwise.html'
-            });
-
-               }])
-    </script>
 </body>
 </html>
