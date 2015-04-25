@@ -6,4 +6,4 @@ angular.module('initial_spi.controllers', [])
 
 .controller('smartphoneController', function($scope){
 	$scope.smartphone_message = 'Otro Mensaje';
-});
+}); 
