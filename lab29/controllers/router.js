@@ -1,19 +1,47 @@
-/**
- * Created by alejo8591 on 21/04/15.
- */
-var logic = require('./logic');
+var express = require('express');
+
+var router = express.Router();
+
+router.get('/', function(req, res){
+	res.render('index', {'title' : 'Lab29'});
+});
+
+router.post('/message', function(req, res){
+	var data = {
+		name : "Algún Nombre",
+		age : "100",
+		id : "4848447"
+	};
+
+	console.log(req.body);
+
+	res.header('Content-Type', 'text/json').send(data);
+});
 
 
-// Metodo que se exporta o publica para poder ser usado en la resolucion de URLs
-exports.get = function(req, res){
+router.get('/data', function(req, res){
 
-	res.writeHead(200, {
-		'Content-Type' : 'text/html'
-	});
+	try{
 
-	// En el envio y cierre de la cabecera con peticion GET cargamos de logic
-	// la estructura basica de una pagina que su base es `exports.page`
-	res.end(
-		logic.page('Operación Matemática', logic.navbar(), '<p>Operación Matemática</p>')
-	);
-};
+		//Modulo en Node.js para manipular archivos
+		var fs = require('fs');
+
+		var path = require('path');
+
+		fs.readFile(path.join(__dirname, "../models/data.json"), "utf-8", function(err, data){
+
+            console.log(typeof data);
+
+			var data = JSON.parse(data);
+
+            console.log(typeof data);
+
+			res.header('Content-Type', 'application/json').send(data);
+		});
+	} catch(err){
+		console.log(err);
+	}
+});
+
+
+module.exports = router;
