@@ -1,0 +1,14 @@
+{
+  "name": "lab31",
+  "version": "1.0.0",
+  "description": "gulp",
+  "main": "app.js",
+  "devDependencies": {
+    "gulp": "^3.8.11"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "john Castillo",
+  "license": "MIT"
+}
