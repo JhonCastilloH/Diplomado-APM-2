@@ -1,0 +1,74 @@
+ionic 	      -> angularjs
+jquery Mobile -> jQuery
+
+
+  C:\>npm install -g cordova
+
+version 5 soporta java 7
+	
+  C:\>npm update -g cordova
+
+
+!!!!!Debug en COrdova!!!!!!
+
+///////HERRAMIENTAS DE APOYO///////
+
+WEINRE (web inspector remote)
+
+pm install -g weinre
+
+FIREFOX OS 
+
+
+1. CREAR APLICACION EN CORDOVA
+
+cordova create lab33 com.app.lab33 "lab33"
+
+2. Add Platforms
+
+	cordova platform add wp8
+	cordova platform add windows
+	cordova platform add amazon-fireos
+	cordova platform add android
+	cordova platform add blackberry10
+	cordova platform add firefoxos
+
+
+3. Cordova prepare firefoxos
+
+4. firefox developer herramientas webID
+
+5. para las otras versiones es obligatorio configurar las variables de entorno y jdk en android
+platfomr tools, tools y SDK
+
+6. para un simulador
+firefox
+cordova prepara firefoxos
+
+andorid
+cordova build android //construir .apk
+cordova emulate android
+cordava run android
+
+
+
+7. para un dispositivo real
+
+samsumg: instalar kies
+
+
+///////INSTALAR APIS//////////
+
+1. cordova plugin add cordova-plugin-device-motion 
+
+2. borrar del index en www el primer meta
+
+3. borrar el tag div
+
+
+
+Fuentes de ayuda!!!!!!
+-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
+pagina principal
+http://cordova.apache.org/docs/en/5.0.0//guide_cli_index.md.html#The%20Command-Line%20Interface
+
