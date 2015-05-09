@@ -1,0 +1,22 @@
+{
+  "name": "lab32",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.8.11"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "gulp-concat": "^2.5.2",
+    "gulp-concat-css": "^2.2.0",
+    "gulp-cssmin": "^0.1.7",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.2.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "John Castillo",
+  "license": "MIT"
+}
