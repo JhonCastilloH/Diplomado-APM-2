@@ -43,12 +43,12 @@ platfomr tools, tools y SDK
 
 6. para un simulador
 firefox
-cordova prepara firefoxos
+cordova prepare firefoxos
 
 andorid
 cordova build android //construir .apk
-cordova emulate android
-cordava run android
+cordova emulate android //emulador
+cordava run android  //dispositivo
 
 
 
