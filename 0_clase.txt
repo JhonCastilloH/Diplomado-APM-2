@@ -15,7 +15,26 @@ version 5 soporta java 7
 
 WEINRE (web inspector remote)
 
-pm install -g weinre
+1.pm install -g weinre
+
+2. ponemos "weinre" en el comamNode para cargar el servicio
+
+3. en el index comentamos la linea meta
+
+4. agregamos un scrip 
+src= "http://localhost:8080/target-script-min.js#lab35"
+
+para android es con 10.0.2.2:8080
+
+5. vamos al http://localhost:8080
+
+6. cambiamos el anonimos por nuestro lab
+http://localhost:8080/client/#lab35
+
+7. abrimos un nuevo commanNode hacemos lo habitual para lanzar la app
+
+
+
 
 FIREFOX OS 
 
@@ -58,7 +77,6 @@ samsumg: instalar kies
 
 
 ///////INSTALAR APIS//////////
-
 1. cordova plugin add cordova-plugin-device-motion 
 
 2. borrar del index en www el primer meta
@@ -71,4 +89,11 @@ Fuentes de ayuda!!!!!!
 -.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
 pagina principal
 http://cordova.apache.org/docs/en/5.0.0//guide_cli_index.md.html#The%20Command-Line%20Interface
+
+Estructura de las carpetas de Cordova------
+
+host: para las diferentes versiones
+platforms:para las diferentes plataformas
+www:structura de la app css y html
+config:archivos de configuracion y plataformas
 
