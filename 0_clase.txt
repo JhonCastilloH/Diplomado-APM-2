@@ -64,6 +64,8 @@ platfomr tools, tools y SDK
 firefox
 cordova prepare firefoxos
 
+
+
 andorid
 cordova build android //construir .apk
 cordova emulate android //emulador
@@ -84,6 +86,14 @@ samsumg: instalar kies
 3. borrar el tag div
 
 
+8 para ver el log
+
+firefox 
+en el WebID ver debug console
+
+android
+en en comamd sistem
+adb logcat CordovaLog:D \*:S
 
 Fuentes de ayuda!!!!!!
 -.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
@@ -96,4 +106,24 @@ host: para las diferentes versiones
 platforms:para las diferentes plataformas
 www:structura de la app css y html
 config:archivos de configuracion y plataformas
+
+
+
+///////Plugins /////////////
+
+1. revisar las plateformas soportadas
+
+2. revisar los metodos //lo que me permite hacer
+
+3. instalacion
+cordova plugin add org.apache.cordova.device-motion
+
+4. usar en un js. los metodos 
+
+
+PLUGINS
+
+-plugin para el acelerometro device-motion
+-plugin para detectar res 3G 4G network-information
+-plugin para detectar la orientacion device-orientation
 
