@@ -40,8 +40,8 @@ FIREFOX OS
 
 
 1. CREAR APLICACION EN CORDOVA
+cordova create lab41 com.famisanar.lab41 lab41
 
-cordova create lab33 com.app.lab33 "lab33"
 
 2. Add Platforms
 
@@ -126,4 +126,20 @@ PLUGINS
 -plugin para el acelerometro device-motion
 -plugin para detectar res 3G 4G network-information
 -plugin para detectar la orientacion device-orientation
+
+//////////////Instalarmodulos de  NODE //////////
+1.iniciar sesion en NMP
+npm init
+
+2. instalar el modulo
+npm install --global gulp //este esta pforma es global
+
+npm install --save-dev gulp  //esta forma es para desarrollo
+
+otros que se instalan luego segun ser require en el gulp.js
+npm install gulp-cssmin gulp-rename gulp-concat-css gulp-concat gulp-uglify -save-dev
+
+//////////Jquery Movile Ejemplo////////////////////////
+se descargan y se ubican los archivos . min en css y ja respectivamente
+las imagenes van en css
 

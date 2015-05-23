@@ -1,0 +1,17 @@
+{
+    "launch_path": "/index.html",
+    "installs_allowed_from": [
+        "*"
+    ],
+    "version": "0.0.1",
+    "name": "lab42",
+    "description": "A sample Apache Cordova application that responds to the deviceready event.",
+    "developer": {
+        "name": "Apache Cordova Team",
+        "url": "http://cordova.io"
+    },
+    "icons": {},
+    "permissions": {
+    "geolocation": { "description": "Used to position the map to your current position" }
+}
+}
