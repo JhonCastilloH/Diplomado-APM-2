@@ -116,7 +116,10 @@ config:archivos de configuracion y plataformas
 2. revisar los metodos //lo que me permite hacer
 
 3. instalacion
+4.0
 cordova plugin add org.apache.cordova.device-motion
+5.0
+cordova plugin add cordova-plugin-media-capture
 
 4. usar en un js. los metodos 
 
@@ -142,4 +145,31 @@ npm install gulp-cssmin gulp-rename gulp-concat-css gulp-concat gulp-uglify -sav
 //////////Jquery Movile Ejemplo////////////////////////
 se descargan y se ubican los archivos . min en css y ja respectivamente
 las imagenes van en css
+
+////////// geny Motion //////////////
+
+corodova emulate android 192.168.56.101:5555
+
+
+//////////// permission ////////
+
+for firefox
+https://developer.mozilla.org
+
+"permissions": {
+  "audio-capture": {
+    "description": "Required to capture audio using getUserMedia()"
+  },
+  "video-capture": {
+    "description": "Required to capture video using getUserMedia()"
+  }
+}
+
+/////////////////// IONIC /////////////////////
+
+1 instalacion global
+npm install -g ionic bower
+
+2 instalacion local
+ionic start lab48 blank
 
