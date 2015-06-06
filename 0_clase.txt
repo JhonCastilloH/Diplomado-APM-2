@@ -173,3 +173,21 @@ npm install -g ionic bower
 2 instalacion local
 ionic start lab48 blank
 
+3. 
+
+***lawnchair
+
+//////////// REST /////////////
+*** postman pligin servicios para mozilla
+
+balanceadores de carga = multiplexor de carga
+
+////////// SQLite   ////////////////
+
+***sql manager plugin for mozilla
+// Llamado del modulo "SQLite3"
+var sqlite3 = require("sqlite3").verbose();
+
+
+// Creación del documento phonegap.sqlite
+var db = new sqlite3.Database("cordova.db");
