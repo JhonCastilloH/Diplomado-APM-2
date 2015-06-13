@@ -173,7 +173,11 @@ npm install -g ionic bower
 2 instalacion local
 ionic start lab48 blank
 
-3. 
+3. instalar plataformas
+ionic platform add 
+
+4 instalar dependencias con bower
+
 
 ***lawnchair
 
