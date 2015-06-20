@@ -195,3 +195,26 @@ var sqlite3 = require("sqlite3").verbose();
 
 // Creación del documento phonegap.sqlite
 var db = new sqlite3.Database("cordova.db");
+
+***Factories
+
+las factories se pueden usar en en modulo y se usan como cominicador entre controladores
+
+////////////sas//////////////////////
+
+bower install angular-resource --save
+
+css whit supérpowers incluye variables y funciones
+
+install
+rubyinstaller.org
+
+npm install gulp gulp-sass --save-dev
+
+*** sublime packge control install sass
+
+**** otros funstion blackbone less skeletor
+
+genera codigo css si esta un wach en gulp lo hace auto
+
+
