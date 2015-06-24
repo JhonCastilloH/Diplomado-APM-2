@@ -218,3 +218,21 @@ npm install gulp gulp-sass --save-dev
 genera codigo css si esta un wach en gulp lo hace auto
 
 
+//////////ICONIX/////////////
+mockups->modelo de Dominio->Diagramas de secuencia->CasosdeUso->Diagrama de Robustes.
+
+extreme Programing
+
+1. consumo del servicio
+2.Defino Rutas
+3. Construyo Controladores
+4. Construyo Templates
+
+
+/////////////bower//////////////////
+
+open gitbash
+
+
+bower install angular-resource
+
